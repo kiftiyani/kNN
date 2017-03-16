@@ -13,9 +13,9 @@ class KNNMethods:
         self.mode = mode
         self.k = k
 
-    # ~~function to train the training set and return model
+    # ~~function to train the training set and save the model
+    # model = [:][#features, new class, actual class]
     def training(self, trainingSet):
-        # model = []
         for train1 in trainingSet:
             dists = []
 
@@ -38,7 +38,6 @@ class KNNMethods:
             tmp.append(train1[len(train1)-1])
 
             self.model.append(tmp)
-        # print self.model
 
     # ~~function to testing data
     def testing(self, testData):
