@@ -24,12 +24,11 @@ class Evaluation:
         tmperror = 0
         total = 0
         for cnt in count:
-            print cnt
             total += count[(cnt[0], cnt[1])]
             if cnt[0] == cnt[1]:
                 tmpacc += count[(cnt[0], cnt[1])]
             else:
                 tmperror += count[(cnt[0], cnt[1])]
 
-        self.accuracy.append({k: float(tmpacc)/float(total)})
-        self.errorrate.append({k: tmperror})
+        self.accuracy.append([k, float(tmpacc)/float(total)])
+        self.errorrate.append([k, tmperror])
